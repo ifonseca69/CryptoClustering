@@ -86,7 +86,7 @@ Use the following steps to cluster the cryptocurrencies for the best value for `
  
 **Question:** What is the total explained variance of the three principal components?
   
-**Answer:** **0.8788327449101367**
+**Answer:**  0.8950316570309841
 
 - What is the total explained variance of the three principal components?
 
@@ -193,13 +193,17 @@ PCA Bar Chart Plot all features
       
 *   **PCA2**:
     
-    -   The higher values for PCA2 futures from all the coin_ids show 200 days and one year.
+    -   The higher values for PCA2 futures from all the coin_id show 200 days and one year.
     -   Short-term futures (14 days) start with negative values but turn positive after 30 days.
 
 *  **PCA3**:
     
     -   Compared to PCA1, PCA2 has higher values for the future of 30 days.
     -   Maintains these values slightly up to 60 days, after which the long-term futures decrease started from the futures of 200 days.
- 
+      
+
+*  **PCA1,PCA2**: 
+	 - The two dimensions, PCA1 and PCA2, represent the most influential values for the data set and simplify the dimensional data for observing the trend with the clusters compared to PCA3.
+  
 **Note** : short term up to 60 days.
 long term 200 days and 1 year.
