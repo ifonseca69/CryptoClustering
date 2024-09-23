@@ -153,14 +153,24 @@ Use the following steps to cluster the cryptocurrencies for the best value for `
 5. Create a scatter plot using pandas’ `plot` as follows:
 
 - Set the x-axis as "PC1" and the y-axis as "PC2".
-- 
- ![PCA Scatter Plot x-axis PCA1, y-axis PCA2.](Resources/Cryptocurrency_Clusters_PCA_Transformed_Data.htmlCryptocurrency_Clusters_PCA_Transformed_Data.html)
- 
+
+ ![PCA Scatter Plot x-axis PCA1, y-axis PCA2.](Resources/Cryptocluster_PCA_.png)
+
+- Set the x-axis as "PC2" and the y-axis as "PC3".
+
+
+![PCA Scatter Plot x-axis PCA1, y-axis PCA2.](Resources/Cryptocluster_PCA_PCA2_3.png)
+
 6. Answer the following question:
 
 - What is the impact of using fewer features to cluster the data using K-Means?
 
-  
+- Answer: Simplify the data by reducing the number of features to better representation for the data set when there are too many features. 
+
+PCA Bar Chart Plot all features
+![PCA Components Bar Chart.](Resources/pca_components_weight_bar_chart.png) 
+
+
 
 #### Determine the Weights of Each Feature on Each Principal Component
 
@@ -171,224 +181,25 @@ Use the following steps to cluster the cryptocurrencies for the best value for `
 2. Which features have the strongest positive or negative influence on each component?
 
   
+#### Answer the following question: 
 
-### Requirements
-
-  
-
-#### Find the Best Value for k Using the Original Scaled DataFrame (15 points)
-
-  
-
-To receive all points, you must:
-
-  
-
-- Code the elbow method algorithm to find the best value for k. Use a range from 1 to 11. (5 points)
-
-- Visually identify the optimal value for k by plotting a line chart of all the inertia values computed with the different values of k. (5 points)
-
-- Answer the following question: What’s the best value for k? (5 points)
-
-![Elbow K value PCA.](Resources/Elbow_PCA_Optimal_K.jpg)
- #### Answer the following questions:
-
-*  **Question:** What is the best value for `k` when using the PCA data?
-
-
-*  **Answer:** PCA data method best K_value K=4
-
+* **Question:** Which features have the strongest positive or negative influence on each component? 
  
+* **Answer:**
+* *  **PCA1**:
+    
+    -   Indicates a positive trend up to 60 days, after which the future trend decreases.
+    -   Crypto_cluster indicated the lower or negative values. 
+      
+*   **PCA2**:
+    
+    -   The higher values for PCA2 futures from all the coin_ids show 200 days and one year.
+    -   Short-term futures (14 days) start with negative values but turn positive after 30 days.
 
-*  **Question:** Does it differ from the best k value found using the original data?
+*  **PCA3**:
+    
+    -   Compared to PCA1, PCA2 has higher values for the future of 30 days.
+    -   Maintains these values slightly up to 60 days, after which the long-term futures decrease started from the futures of 200 days.
  
-
-*  **Answer:** Yes, reduced by one dimensional the k values to visualize with one less cluster K=4 instead K=5 original K-mean value
-
-#### Cluster Cryptocurrencies with K-Means Using the Original Scaled Data (10 points)
-
-  
-
-To receive all points, you must:
-
-  
-
-- Initialize the K-means model with four clusters by using the best value for k. (1 point)
-
-- Fit the K-means model by using the original data. (1 point)
-
-- Predict the clusters for grouping the cryptocurrencies by using the original data. Review the resulting array of cluster values. (3 points)
-
-- Create a copy of the original data, and then add a new column of the predicted clusters. (1 point)
-
-- Using pandas’ `plot`, create a scatter plot by setting `x="price_change_percentage_24h"` and `y="price_change_percentage_7d"`. (4 points)
-
-  
-
-#### Optimize the Clusters with Principal Component Analysis (10 points)
-
-  
-
-To receive all points, you must:
-
-  
-
-- Create a PCA model instance, and set `n_components=3`. (1 point)
-
-- Use the PCA model to reduce the features to three principal components, then review the first five rows of the DataFrame. (2 points)
-
-- Get the explained variance to determine how much information can be attributed to each principal component. (2 points)
-
-- Answer the following question: What’s the total explained variance of the three principal components? (3 points)
-
-- Create a new DataFrame with the PCA data. Be sure to set the `coin_id` index from the original DataFrame as the index for the new DataFrame. Review the resulting DataFrame. (2 points)
-
-  
-
-#### Find the Best Value for k by Using the PCA Data (10 points)
-
-  
-
-To receive all points, you must:
-
-  
-
-- Code the elbow method algorithm, and use the PCA data to find the best value for k. Use a range from 1 to 11. (2 points)
-
-- Visually identify the optimal value for k by plotting a line chart of all the inertia values computed with the different values of k. (5 points)
-
-- Answer the following questions: What’s the best value for k when using the PCA data? Does it differ from the best value for k that you found by using the original data? (3 points)
-
-  
-
-#### Cluster the Cryptocurrencies with K-Means by Using the PCA Data (10 points)
-
-  
-
-To receive all points, you must:
-
-  
-
-- Initialize the K-means model with four clusters by using the best value for k. (1 point)
-
-- Fit the K-means model by using the PCA data. (1 point)
-
-- Predict the clusters for grouping the cryptocurrencies by using the PCA data. Review the resulting array of cluster values. (3 points)
-
-- Create a copy of the DataFrame with the PCA data, and then add a new column to store the predicted clusters. (1 point)
-
-- Using pandas’ `plot`, create a scatter plot by setting `x="PC1"` and `y="PC2"`. (4 points)
-
-  
-
-#### Determine the Weights of Each Feature on Each Principal Component (15 points)
-
-  
-
-To receive all points, you must:
-
-  
-
-- Create a DataFrame that shows the weights of each feature (column) for each principal component by using the columns from the original scaled DataFrame as the index. (10 points)
-
-- Answer the following question: Which features have the strongest positive or negative influence on each component? (5 points)
-
-  
-
-#### Coding Conventions and Formatting (10 points)
-
-  
-
-To receive all points, you must:
-
-  
-
-- Place imports at the top of the file, just after any module comments and docstrings, and before module globals and constants. (3 points)
-
-- Name functions and variables with lowercase characters, with words separated by underscores. (2 points)
-
-- Follow DRY (Don't Repeat Yourself) principles, creating maintainable and reusable code. (3 points)
-
-- Use concise logic and creative engineering where possible. (2 points)
-
-  
-
-#### Deployment and Submission (10 points)
-
-  
-
-To receive all points, you must:
-
-  
-
-- Submit a link to a GitHub repository that’s cloned to your local machine and that contains your files. (4 points)
-
-- Use the command line to add your files to the repository. (3 points)
-
-- Include appropriate commit messages in your files. (3 points)
-
-  
-
-#### Code Comments (10 points)
-
-  
-
-To receive all points, your code must:
-
-  
-
-- Be well commented with concise, relevant notes that other developers can understand. (10 points)
-
-  
-
-### Grading
-
-  
-
-This project will be evaluated against the requirements and assigned a grade according to the following table:
-
-  
-
-  
-
-### Submission
-
-  
-
-To submit your Challenge assignment, click Submit, and then provide the URL of your GitHub repository for grading.
-
-  
-
-**note**
-
-  
-
-You are allowed to miss up to two Challenge assignments and still earn your certificate. If you complete all Challenge assignments, your lowest two grades will be dropped. If you wish to skip this assignment, click Next, and move on to the next module.
-
-  
-
-Comments are disabled for graded submissions in Bootcamp Spot. If you have questions about your feedback, please notify your instructional staff or your Student Success Manager. If you would like to resubmit your work for an additional review, you can use the Resubmit Assignment button to upload new links. You may resubmit up to three times for a total of four submissions.
-
-  
-
-**important**
-
-  
-
-**It is your responsibility to include a note in the README section of your repo specifying code source and its location within your repo**. This applies if you have worked with a peer on an assignment, used code in which you did not author or create sourced from a forum such as Stack Overflow, or you received code outside curriculum content from support staff such as an Instructor, TA, Tutor, or Learning Assistant. This will provide visibility to grading staff of your circumstance in order to avoid flagging your work as plagiarized.
-
-  
-
-If you are struggling with a challenge assignment or any aspect of the academic curriculum, please remember that there are student support services available for you:
-
-  
-
-1. Ask the class Slack channel/peer support.
-
-2. AskBCS Learning Assistants exists in your class Slack application.
-
-3. Office hours facilitated by your instructional staff before and after each class session.
-
-4. [Tutoring GuidelinesLinks to an external site.](https://docs.google.com/document/d/1hTldEfWhX21B_Vz9ZentkPeziu4pPfnwiZbwQB27E90/edit?usp=sharing) - schedule a tutor session in the Tutor Sessions section of Bootcampspot - Canvas
-
-5. If the above resources are not applicable and you have a need, please reach out to a member of your instructional team, your Student Success Advisor, or submit a support ticket in the Student Support section of your BCS application.
+**Note** : short term up to 60 days.
+long term 200 days and 1 year.
