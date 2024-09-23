@@ -44,7 +44,7 @@ Use the elbow method to find the best value for `k` by completing the following 
 
 **Answer:** 5 is the best value as the trend flattening out at that inertia
 
-  ![Optimal K Value Elbow Plot.](Resources/elbow_method_Optimal_k.jpg)
+  ![Optimal_K](Resources/Elbow_Method_Optimal_K.jpg)
 
 
 
@@ -69,7 +69,7 @@ Use the following steps to cluster the cryptocurrencies for the best value for `
 
 - Set the x-axis as "price_change_percentage_24h" and the y-axis as "price_change_percentage_7d".
 
-  ![Cryptocurrency Cluster Scatter Plot x-axis pirce_change_percentage_24h  y-axis price_change_percenage_7d.](Resources/Cryptocurrency_clusters.jpg)
+  ![Cryptocurrency](Resources/Cryptocurrency_Clusters.jpg)
   
 
 #### Optimize Clusters with Principal Component Analysis
@@ -122,7 +122,7 @@ Use the elbow method on the PCA data to find the best value for `k` using the fo
 
 - Does it differ from the best k-value found using the original data?
 
-  ![Optimal K Value with PCA data Elbow Plot.](Resources/Elbow_PCA_Optimal_k.jpg)
+  ![OptimalK_PCA](Resources/Elbow_PCA_Optimal_K.jpg)
  
  #### Answer the following questions:
 
